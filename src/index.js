@@ -14,26 +14,22 @@ const winMessage = (username) => {
   console.log(`Congratulations, ${username}!`);
 };
 
+const isEven = (number) => number % 2 === 0;
+
 const loseMessage = (userAnswer, generatedNumber, username) => {
-  const rightAnswer = isEven(generatedNumber) ? 'yes' : 'no'
+  const rightAnswer = isEven(generatedNumber) ? 'yes' : 'no';
   console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
   console.log(`Let's try again, ${username}!`);
 };
 
-const generateRandomInt = () => {
-  return parseInt(Math.random() * 50);
-};
+const generateRandomInt = () => parseInt(Math.random() * 50, 10);
 
 const showQuestion = (question) => {
   console.log(`Question: ${question}`);
 };
 
-const isEven = (number) => {
-  return number % 2 === 0;
-};
-
 const isCorrectEvenAnswer = (answer, number) => {
-  if (answer === 'yes' && isEven(number) || answer === 'no' && !isEven(number)) {
+  if ((answer === 'yes' && isEven(number)) || (answer === 'no' && !isEven(number))) {
     return true;
   }
   return false;
@@ -50,7 +46,7 @@ export const startBrainEven = () => {
   let rightAnswerCounter = 0;
 
   while (rightAnswerCounter < winAnswersNumber) {
-    let randomNumber = generateRandomInt();
+    const randomNumber = generateRandomInt();
     showQuestion(randomNumber);
     const answer = getAnswer();
     if (isCorrectEvenAnswer(answer, randomNumber)) {
@@ -64,5 +60,5 @@ export const startBrainEven = () => {
 
   if (rightAnswerCounter === winAnswersNumber) {
     winMessage(username);
-  } 
-}
+  }
+};
