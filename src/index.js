@@ -59,6 +59,18 @@ const generateRandomOper = () => {
   }
 };
 
+const calculateExpression = (expr) => {
+  const [a, operator, b] = expr.split(' ');
+  switch (operator) {
+    case ('+'):
+      return +a + +b;
+    case ('-'):
+      return a - b;
+    default:
+      return a * b;
+  }
+};
+
 export const startBrainEven = () => {
   const winAnswersNumber = 3;
   console.log('Welcome to the Brain Games!');
@@ -99,7 +111,7 @@ export const startBrainCalc = () => {
 
   while (rightAnswerCounter < winAnswersNumber) {
     const randomExpr = `${generateRandomInt()} ${generateRandomOper()} ${generateRandomInt()}`;
-    const correctAnswer = eval(randomExpr);
+    const correctAnswer = calculateExpression(randomExpr);
     showQuestion(randomExpr);
     const answer = +getAnswer();
     if (isCorrectCalcAnswer(answer, correctAnswer)) {
