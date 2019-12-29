@@ -16,9 +16,14 @@ const winMessage = (username) => {
 
 const isEven = (number) => number % 2 === 0;
 
-const loseMessage = (userAnswer, generatedNumber, username) => {
+const loseEvenMessage = (userAnswer, generatedNumber, username) => {
   const rightAnswer = isEven(generatedNumber) ? 'yes' : 'no';
-  console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+  console.log(`Let's try again, ${username}!`);
+};
+
+const loseCalcMessage = (userAnswer, correctAnswer, username) => {
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${username}!`);
 };
 
@@ -33,6 +38,25 @@ const isCorrectEvenAnswer = (answer, number) => {
     return true;
   }
   return false;
+};
+
+
+const isCorrectCalcAnswer = (answer, correctAnswer) => {
+  if (answer === correctAnswer) {
+    return true;
+  }
+  return false;
+};
+
+const generateRandomOper = () => {
+  switch (parseInt(Math.random() * 3, 10)) {
+    case (0):
+      return '+';
+    case (1):
+      return '-';
+    default:
+      return '*';
+  }
 };
 
 export const startBrainEven = () => {
@@ -53,7 +77,36 @@ export const startBrainEven = () => {
       console.log('Correct!');
       rightAnswerCounter += 1;
     } else {
-      loseMessage(answer, randomNumber, username);
+      loseEvenMessage(answer, randomNumber, username);
+      break;
+    }
+  }
+
+  if (rightAnswerCounter === winAnswersNumber) {
+    winMessage(username);
+  }
+};
+
+export const startBrainCalc = () => {
+  const winAnswersNumber = 3;
+  console.log('Welcome to the Brain Games!');
+  console.log('What is the result of the expression ?\n');
+
+  const username = getUsername();
+  console.log(`Hello, ${username}!\n`);
+
+  let rightAnswerCounter = 0;
+
+  while (rightAnswerCounter < winAnswersNumber) {
+    const randomExpr = `${generateRandomInt()} ${generateRandomOper()} ${generateRandomInt()}`;
+    const correctAnswer = eval(randomExpr);
+    showQuestion(randomExpr);
+    const answer = +getAnswer();
+    if (isCorrectCalcAnswer(answer, correctAnswer)) {
+      console.log('Correct!');
+      rightAnswerCounter += 1;
+    } else {
+      loseCalcMessage(answer, correctAnswer, username);
       break;
     }
   }
