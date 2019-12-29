@@ -22,7 +22,8 @@
   ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "homepage": "https://github.com/ssssank/frontend-project-lvl1#readme",
   "devDependencies": {
