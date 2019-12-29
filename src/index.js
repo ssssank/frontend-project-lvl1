@@ -1,10 +1,12 @@
 import readlineSync from 'readline-sync';
 import brainCalc from './games/brain-calc';
 import brainEven from './games/brain-even';
+import brainGcd from './games/brain-gcd';
 
 const gamesMap = {
   'brain-even': brainEven,
   'brain-calc': brainCalc,
+  'brain-gcd': brainGcd,
 };
 
 export const getUsername = () => {

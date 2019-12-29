@@ -9,3 +9,7 @@
 ## Brain calc
 ### Install and start
 [![asciicast](https://asciinema.org/a/COo5PN41i1qDoLObv9o0Rymre.svg)](https://asciinema.org/a/COo5PN41i1qDoLObv9o0Rymre)
+
+## Brain GCD
+### Install and start
+[![asciicast](https://asciinema.org/a/l1PhOWdjNyFNsE4WOfywlvYUW.svg)](https://asciinema.org/a/l1PhOWdjNyFNsE4WOfywlvYUW)
