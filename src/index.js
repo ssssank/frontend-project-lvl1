@@ -2,11 +2,14 @@ import readlineSync from 'readline-sync';
 import brainCalc from './games/brain-calc';
 import brainEven from './games/brain-even';
 import brainGcd from './games/brain-gcd';
+import brainProgression from './games/brain-progression';
+import { car, cdr } from '@hexlet/pairs';
 
 const gamesMap = {
   'brain-even': brainEven,
   'brain-calc': brainCalc,
   'brain-gcd': brainGcd,
+  'brain-progression': brainProgression,
 };
 
 export const getUsername = () => {
@@ -39,14 +42,16 @@ export const game = (gameName) => {
   let rightAnswerCounter = 0;
 
   while (rightAnswerCounter < winAnswersNumber) {
-    const currentQuestion = currentGame.question();
+    const questionPair = currentGame.question()
+    const currentQuestion = car(questionPair);
+    const rightAnswer = cdr(questionPair);
     showQuestion(currentQuestion);
     const answer = getAnswer();
-    if (currentGame.isCorrectAnswer(answer, currentQuestion)) {
+    if (+answer === rightAnswer) {
       console.log('Correct!');
       rightAnswerCounter += 1;
     } else {
-      currentGame.loseMessage(answer, currentQuestion, username);
+      currentGame.loseMessage(answer, rightAnswer, username);
       break;
     }
   }
