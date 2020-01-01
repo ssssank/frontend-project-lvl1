@@ -46,8 +46,8 @@ export const game = (gameName) => {
     const currentQuestion = car(questionPair);
     const rightAnswer = cdr(questionPair);
     showQuestion(currentQuestion);
-    const answer = getAnswer();
-    if (+answer === rightAnswer) {
+    const answer = getAnswer().toString();
+    if (answer === rightAnswer) {
       console.log('Correct!');
       rightAnswerCounter += 1;
     } else {

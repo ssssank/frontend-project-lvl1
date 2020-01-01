@@ -1,4 +1,5 @@
 import generateRandomInt from '../utils';
+import { cons } from '@hexlet/pairs';
 
 const calculateExpression = (expr) => {
   const [a, operator, b] = expr.split(' ');
@@ -13,7 +14,7 @@ const calculateExpression = (expr) => {
 };
 
 const loseCalcMessage = (userAnswer, correctAnswer, username) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calculateExpression(correctAnswer)}'.`);
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${username}!`);
 };
 
@@ -30,17 +31,14 @@ const generateRandomOper = () => {
 
 const generateRandomExpr = () => `${generateRandomInt()} ${generateRandomOper()} ${generateRandomInt()}`;
 
-const isCorrectCalcAnswer = (answer, question) => {
-  const correctAnswer = calculateExpression(question);
-  if (+answer === correctAnswer) {
-    return true;
-  }
-  return false;
+const prepareQuestion = () => {
+  const expression = generateRandomExpr();
+  const rightAnswer = calculateExpression(expression);
+  return cons(expression, rightAnswer.toString());
 };
 
 export default {
   rule: 'What is the result of the expression ?\n',
-  question: generateRandomExpr,
-  isCorrectAnswer: isCorrectCalcAnswer,
+  question: prepareQuestion,
   loseMessage: loseCalcMessage,
 };

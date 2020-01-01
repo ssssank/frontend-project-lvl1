@@ -6,13 +6,6 @@ const loseProgressionMessage = (userAnswer, correctAnswer, username) => {
   console.log(`Let's try again, ${username}!`);
 };
 
-const isCorrectProgressionAnswer = (answer, correctAnswer) => {
-  if (+answer === correctAnswer) {
-    return true;
-  }
-  return false;
-};
-
 const generateRandomProgression = (progressionLength) => {
   const progressionStart = generateRandomInt();
   const progressionStep = generateRandomInt();
@@ -29,12 +22,11 @@ const prepareQuestion = () => {
   const randomIndex = generateRandomInt(progressionLength);
   const rightAnswer = progression[randomIndex];
   progression[randomIndex] = '..';
-  return cons(progression.join(' '), rightAnswer);
+  return cons(progression.join(' '), rightAnswer.toString());
 };
 
 export default {
   rule: 'What number is missing in the progression?',
   question: prepareQuestion,
-  isCorrectAnswer: isCorrectProgressionAnswer,
   loseMessage: loseProgressionMessage,
 };
