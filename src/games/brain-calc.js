@@ -13,11 +13,6 @@ const calculateExpression = (expr) => {
   }
 };
 
-const loseCalcMessage = (userAnswer, correctAnswer, username) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${username}!`);
-};
-
 const generateRandomOper = () => {
   switch (Math.round(Math.random() * 3)) {
     case (0):
@@ -40,5 +35,4 @@ const prepareQuestion = () => {
 export default {
   rule: 'What is the result of the expression ?\n',
   question: prepareQuestion,
-  loseMessage: loseCalcMessage,
 };

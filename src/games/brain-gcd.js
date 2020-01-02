@@ -9,11 +9,6 @@ const calculateGcdExpression = (expr) => {
   return +firstNumber;
 };
 
-const loseGcdMessage = (userAnswer, correctAnswer, username) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${username}!`);
-};
-
 const generateRandomGcdExpr = () => `${generateRandomInt()} ${generateRandomInt()}`;
 
 const prepareQuestion = () => {
@@ -23,7 +18,6 @@ const prepareQuestion = () => {
 };
 
 export default {
-  rule: 'Find the greatest common divisor of given numbers.',
+  rule: 'Find the greatest common divisor of given numbers.\n',
   question: prepareQuestion,
-  loseMessage: loseGcdMessage,
 };

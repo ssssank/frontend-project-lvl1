@@ -22,8 +22,13 @@ const getAnswer = () => {
   return answer;
 };
 
-const winMessage = (username) => {
+const showWinMessage = (username) => {
   console.log(`Congratulations, ${username}!`);
+};
+
+const showLoseMessage = (userAnswer, correctAnswer, username) => {
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  console.log(`Let's try again, ${username}!`);
 };
 
 const showQuestion = (question) => {
@@ -39,24 +44,25 @@ export const game = (gameName) => {
   const username = getUsername();
   console.log(`Hello, ${username}!\n`);
 
-  let rightAnswerCounter = 0;
+  let correctAnswerCounter = 0;
 
-  while (rightAnswerCounter < winAnswersNumber) {
+  while (correctAnswerCounter < winAnswersNumber) {
     const questionPair = currentGame.question();
     const currentQuestion = car(questionPair);
-    const rightAnswer = cdr(questionPair);
+    const correctAnswer = cdr(questionPair);
     showQuestion(currentQuestion);
     const answer = getAnswer().toString();
-    if (answer === rightAnswer) {
+    
+    if (answer === correctAnswer) {
       console.log('Correct!');
-      rightAnswerCounter += 1;
+      correctAnswerCounter += 1;
     } else {
-      currentGame.loseMessage(answer, rightAnswer, username);
+      showLoseMessage(answer, correctAnswer, username);
       break;
     }
   }
 
-  if (rightAnswerCounter === winAnswersNumber) {
-    winMessage(username);
+  if (correctAnswerCounter === winAnswersNumber) {
+    showWinMessage(username);
   }
 };

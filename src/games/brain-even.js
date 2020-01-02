@@ -3,11 +3,6 @@ import generateRandomInt from '../utils';
 
 const isEven = (number) => number % 2 === 0;
 
-const loseEvenMessage = (userAnswer, correctAnswer, username) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${username}!`);
-};
-
 const calculateExpression = (question) => {
   if (isEven(question)) {
     return 'yes';
@@ -24,5 +19,4 @@ const prepareQuestion = () => {
 export default {
   rule: 'Answer "yes" if the number is even, otherwise answer "no".\n',
   question: prepareQuestion,
-  loseMessage: loseEvenMessage,
 };

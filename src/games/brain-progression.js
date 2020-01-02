@@ -1,11 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import generateRandomInt from '../utils';
 
-const loseProgressionMessage = (userAnswer, correctAnswer, username) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${username}!`);
-};
-
 const generateRandomProgression = (progressionLength) => {
   const progressionStart = generateRandomInt();
   const progressionStep = generateRandomInt();
@@ -26,7 +21,6 @@ const prepareQuestion = () => {
 };
 
 export default {
-  rule: 'What number is missing in the progression?',
+  rule: 'What number is missing in the progression?\n',
   question: prepareQuestion,
-  loseMessage: loseProgressionMessage,
 };
