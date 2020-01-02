@@ -1,5 +1,5 @@
-import generateRandomInt from '../utils';
 import { cons } from '@hexlet/pairs';
+import generateRandomInt from '../utils';
 
 const isEven = (number) => number % 2 === 0;
 

@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from '@hexlet/pairs';
 import brainCalc from './games/brain-calc';
 import brainEven from './games/brain-even';
 import brainGcd from './games/brain-gcd';
 import brainProgression from './games/brain-progression';
-import { car, cdr } from '@hexlet/pairs';
 
 const gamesMap = {
   'brain-even': brainEven,
@@ -42,7 +42,7 @@ export const game = (gameName) => {
   let rightAnswerCounter = 0;
 
   while (rightAnswerCounter < winAnswersNumber) {
-    const questionPair = currentGame.question()
+    const questionPair = currentGame.question();
     const currentQuestion = car(questionPair);
     const rightAnswer = cdr(questionPair);
     showQuestion(currentQuestion);

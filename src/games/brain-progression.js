@@ -1,5 +1,5 @@
-import generateRandomInt from '../utils';
 import { cons } from '@hexlet/pairs';
+import generateRandomInt from '../utils';
 
 const loseProgressionMessage = (userAnswer, correctAnswer, username) => {
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
