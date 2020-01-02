@@ -52,7 +52,7 @@ export const game = (gameName) => {
     const correctAnswer = cdr(questionPair);
     showQuestion(currentQuestion);
     const answer = getAnswer().toString();
-    
+
     if (answer === correctAnswer) {
       console.log('Correct!');
       correctAnswerCounter += 1;

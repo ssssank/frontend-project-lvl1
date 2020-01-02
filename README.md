@@ -13,3 +13,7 @@
 ## Brain GCD
 ### Install and start
 [![asciicast](https://asciinema.org/a/l1PhOWdjNyFNsE4WOfywlvYUW.svg)](https://asciinema.org/a/l1PhOWdjNyFNsE4WOfywlvYUW)
+
+## Brain Progression
+### Install and start
+[![asciicast](https://asciinema.org/a/acqgFZitE9VWfc3Kxeq1mEwNI.svg)](https://asciinema.org/a/acqgFZitE9VWfc3Kxeq1mEwNI)
