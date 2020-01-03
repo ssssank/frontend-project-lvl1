@@ -16,11 +16,11 @@ const gamesMap = {
 
 export const getUsername = () => {
   const username = readlineSync.question('May I have your name? ');
-  return username;
+  return username || 'anonymous';
 };
 
 const getAnswer = () => {
-  const answer = readlineSync.question('Your answer: ');
+  const answer = readlineSync.question('Your answer: ').toString();
   return answer;
 };
 
@@ -40,6 +40,7 @@ const showQuestion = (question) => {
 export const game = (gameName) => {
   const currentGame = gamesMap[gameName];
   const winAnswersNumber = 3;
+
   console.log('Welcome to the Brain Games!');
   console.log(currentGame.rule);
 
@@ -49,17 +50,18 @@ export const game = (gameName) => {
   let correctAnswerCounter = 0;
 
   while (correctAnswerCounter < winAnswersNumber) {
-    const questionPair = currentGame.question();
-    const currentQuestion = car(questionPair);
-    const correctAnswer = cdr(questionPair);
-    showQuestion(currentQuestion);
-    const answer = getAnswer().toString();
+    const questionWithAnswer = currentGame.question();
+    const question = car(questionWithAnswer);
+    const correctAnswer = cdr(questionWithAnswer);
 
-    if (answer === correctAnswer) {
+    showQuestion(question);
+    const userAnswer = getAnswer();
+
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
       correctAnswerCounter += 1;
     } else {
-      showLoseMessage(answer, correctAnswer, username);
+      showLoseMessage(userAnswer, correctAnswer, username);
       break;
     }
   }

@@ -2,22 +2,32 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/0d699ce1cd2ebad5064d/maintainability)](https://codeclimate.com/github/ssssank/frontend-project-lvl1/maintainability)
 [![Build Status](https://travis-ci.com/ssssank/frontend-project-lvl1.svg?branch=master)](https://travis-ci.com/ssssank/frontend-project-lvl1)
 
+Project has five games:
+1. Brain Even
+2. Brain Calc
+3. Brain GCD
+4. Brain Progression
+5. Brain Prime
+
+For install:
+1. `make install`
+2. `make publish` - for publishing project
+3. `npm link` - for install locally
+
+[![asciicast](https://asciinema.org/a/Upmje1CqCViu88F6uphxatJLr.svg)](https://asciinema.org/a/Upmje1CqCViu88F6uphxatJLr)
+
 ## Brain even
-### Install and start
-[![asciicast](https://asciinema.org/a/BNkGd7SUWWUQ1MjGhwwG4W5Ku.svg)](https://asciinema.org/a/BNkGd7SUWWUQ1MjGhwwG4W5Ku)
+[![asciicast](https://asciinema.org/a/bMB5TxrDiHFyhZXZcAa3EKLPc.svg)](https://asciinema.org/a/bMB5TxrDiHFyhZXZcAa3EKLPc)
 
 ## Brain calc
-### Install and start
-[![asciicast](https://asciinema.org/a/COo5PN41i1qDoLObv9o0Rymre.svg)](https://asciinema.org/a/COo5PN41i1qDoLObv9o0Rymre)
+[![asciicast](https://asciinema.org/a/mL0Kg4sxXXZADxvmWnWvh2E42.svg)](https://asciinema.org/a/mL0Kg4sxXXZADxvmWnWvh2E42)
 
 ## Brain GCD
-### Install and start
-[![asciicast](https://asciinema.org/a/l1PhOWdjNyFNsE4WOfywlvYUW.svg)](https://asciinema.org/a/l1PhOWdjNyFNsE4WOfywlvYUW)
+[![asciicast](https://asciinema.org/a/dmQhRFVG0ikk31FOSBoPGT24K.svg)](https://asciinema.org/a/dmQhRFVG0ikk31FOSBoPGT24K)
+
 
 ## Brain Progression
-### Install and start
-[![asciicast](https://asciinema.org/a/acqgFZitE9VWfc3Kxeq1mEwNI.svg)](https://asciinema.org/a/acqgFZitE9VWfc3Kxeq1mEwNI)
+[![asciicast](https://asciinema.org/a/uqSuXB5Km8Kd0JclSc3pSKXZs.svg)](https://asciinema.org/a/uqSuXB5Km8Kd0JclSc3pSKXZs)
 
 ## Brain Prime
-### Install and start
-[![asciicast](https://asciinema.org/a/F3NLXQb8SBSgNHE4VrYtwXIhI.svg)](https://asciinema.org/a/F3NLXQb8SBSgNHE4VrYtwXIhI)
+[![asciicast](https://asciinema.org/a/hJOZC6cL21jsXNMv9EOvfmGOp.svg)](https://asciinema.org/a/hJOZC6cL21jsXNMv9EOvfmGOp)

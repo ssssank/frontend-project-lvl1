@@ -1,7 +1,9 @@
 import { cons } from '@hexlet/pairs';
 import generateRandomInt from '../utils';
 
-const calculateExpression = (expr) => {
+const rule = 'What is the result of the expression ?\n';
+
+const getRightAnswer = (expr) => {
   const [a, operator, b] = expr.split(' ');
   switch (operator) {
     case ('+'):
@@ -27,12 +29,12 @@ const generateRandomOper = () => {
 const generateRandomExpr = () => `${generateRandomInt()} ${generateRandomOper()} ${generateRandomInt()}`;
 
 const prepareQuestion = () => {
-  const expression = generateRandomExpr();
-  const rightAnswer = calculateExpression(expression);
-  return cons(expression, rightAnswer.toString());
+  const question = generateRandomExpr();
+  const rightAnswer = getRightAnswer(question);
+  return cons(question, rightAnswer.toString());
 };
 
 export default {
-  rule: 'What is the result of the expression ?\n',
+  rule,
   question: prepareQuestion,
 };

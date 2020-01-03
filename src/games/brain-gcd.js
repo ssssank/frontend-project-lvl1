@@ -1,10 +1,12 @@
 import { cons } from '@hexlet/pairs';
 import generateRandomInt from '../utils';
 
-const calculateGcdExpression = (expr) => {
+const rule = 'Find the greatest common divisor of given numbers.\n';
+
+const getRightAnswer = (expr) => {
   const [firstNumber, secondNumber] = expr.split(' ');
   if (secondNumber > 0) {
-    return calculateGcdExpression(`${secondNumber} ${firstNumber % secondNumber}`);
+    return getRightAnswer(`${secondNumber} ${firstNumber % secondNumber}`);
   }
   return +firstNumber;
 };
@@ -12,12 +14,12 @@ const calculateGcdExpression = (expr) => {
 const generateRandomGcdExpr = () => `${generateRandomInt()} ${generateRandomInt()}`;
 
 const prepareQuestion = () => {
-  const expression = generateRandomGcdExpr();
-  const rightAnswer = calculateGcdExpression(expression);
-  return cons(expression, rightAnswer.toString());
+  const question = generateRandomGcdExpr();
+  const rightAnswer = getRightAnswer(question);
+  return cons(question, rightAnswer.toString());
 };
 
 export default {
-  rule: 'Find the greatest common divisor of given numbers.\n',
+  rule,
   question: prepareQuestion,
 };

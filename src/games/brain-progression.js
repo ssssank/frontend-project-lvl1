@@ -1,6 +1,8 @@
 import { cons } from '@hexlet/pairs';
 import generateRandomInt from '../utils';
 
+const rule = 'What number is missing in the progression?\n';
+
 const generateRandomProgression = (progressionLength) => {
   const progressionStart = generateRandomInt();
   const progressionStep = generateRandomInt();
@@ -21,6 +23,6 @@ const prepareQuestion = () => {
 };
 
 export default {
-  rule: 'What number is missing in the progression?\n',
+  rule,
   question: prepareQuestion,
 };

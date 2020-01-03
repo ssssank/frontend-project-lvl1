@@ -1,21 +1,21 @@
 import { cons } from '@hexlet/pairs';
 import generateRandomInt from '../utils';
 
+const rule = 'Answer "yes" if the number is prime, otherwise answer "no".\n';
+
 const isPrime = (number) => {
   if (number < 2) {
     return false;
   }
-
-  for (let i = 2; i < number; i += 1) {
+  for (let i = 2; i < number / 2; i += 1) {
     if (number % i === 0) {
       return false;
     }
   }
-
   return true;
 };
 
-const calculateExpression = (question) => {
+const getRightAnswer = (question) => {
   if (isPrime(question)) {
     return 'yes';
   }
@@ -23,12 +23,12 @@ const calculateExpression = (question) => {
 };
 
 const prepareQuestion = () => {
-  const expression = generateRandomInt();
-  const rightAnswer = calculateExpression(expression);
-  return cons(expression, rightAnswer);
+  const question = generateRandomInt();
+  const rightAnswer = getRightAnswer(question);
+  return cons(question, rightAnswer);
 };
 
 export default {
-  rule: 'Answer "yes" if the number is prime, otherwise answer "no".\n',
+  rule,
   question: prepareQuestion,
 };

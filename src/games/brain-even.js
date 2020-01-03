@@ -1,9 +1,11 @@
 import { cons } from '@hexlet/pairs';
 import generateRandomInt from '../utils';
 
+const rule = 'Answer "yes" if the number is even, otherwise answer "no".\n';
+
 const isEven = (number) => number % 2 === 0;
 
-const calculateExpression = (question) => {
+const getRightAnswer = (question) => {
   if (isEven(question)) {
     return 'yes';
   }
@@ -11,12 +13,12 @@ const calculateExpression = (question) => {
 };
 
 const prepareQuestion = () => {
-  const expression = generateRandomInt();
-  const rightAnswer = calculateExpression(expression);
-  return cons(expression, rightAnswer);
+  const question = generateRandomInt();
+  const rightAnswer = getRightAnswer(question);
+  return cons(question, rightAnswer);
 };
 
 export default {
-  rule: 'Answer "yes" if the number is even, otherwise answer "no".\n',
+  rule,
   question: prepareQuestion,
 };
