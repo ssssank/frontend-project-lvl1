@@ -17,3 +17,7 @@
 ## Brain Progression
 ### Install and start
 [![asciicast](https://asciinema.org/a/acqgFZitE9VWfc3Kxeq1mEwNI.svg)](https://asciinema.org/a/acqgFZitE9VWfc3Kxeq1mEwNI)
+
+## Brain Prime
+### Install and start
+[![asciicast](https://asciinema.org/a/F3NLXQb8SBSgNHE4VrYtwXIhI.svg)](https://asciinema.org/a/F3NLXQb8SBSgNHE4VrYtwXIhI)

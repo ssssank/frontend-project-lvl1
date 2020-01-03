@@ -4,12 +4,14 @@ import brainCalc from './games/brain-calc';
 import brainEven from './games/brain-even';
 import brainGcd from './games/brain-gcd';
 import brainProgression from './games/brain-progression';
+import brainPrime from './games/brain-prime';
 
 const gamesMap = {
   'brain-even': brainEven,
   'brain-calc': brainCalc,
   'brain-gcd': brainGcd,
   'brain-progression': brainProgression,
+  'brain-prime': brainPrime,
 };
 
 export const getUsername = () => {
