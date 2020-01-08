@@ -1,5 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import generateRandomInt from '../utils';
+import startGame from '..';
 
 const rule = 'What is the result of the expression ?\n';
 
@@ -41,7 +42,9 @@ const prepareQuestion = () => {
   return cons(question, rightAnswer.toString());
 };
 
-export default {
+const game = {
   rule,
   question: prepareQuestion,
 };
+
+export default () => startGame(game);

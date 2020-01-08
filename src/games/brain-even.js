@@ -1,5 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import generateRandomInt from '../utils';
+import startGame from '..';
 
 const rule = 'Answer "yes" if the number is even, otherwise answer "no".\n';
 
@@ -17,8 +18,9 @@ const prepareQuestion = () => {
   const rightAnswer = getRightAnswer(question);
   return cons(question, rightAnswer);
 };
-
-export default {
+const game = {
   rule,
   question: prepareQuestion,
 };
+
+export default () => startGame(game);
