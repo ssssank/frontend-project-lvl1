@@ -27,10 +27,11 @@ const generateRandomOper = () => {
 
 const prepareQuestion = () => {
   const operator = generateRandomOper();
-  let firstNumber, secondNumber;
+  let firstNumber;
+  let secondNumber;
   if (operator === '*') {
     firstNumber = generateRandomInt(2, 11);
-    secondNumber = generateRandomInt(2, 11)
+    secondNumber = generateRandomInt(2, 11);
   } else {
     firstNumber = generateRandomInt();
     secondNumber = generateRandomInt();
