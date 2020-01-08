@@ -19,24 +19,6 @@ export const getUsername = () => {
   return username || 'anonymous';
 };
 
-const getAnswer = () => {
-  const answer = readlineSync.question('Your answer: ').toString();
-  return answer;
-};
-
-const showWinMessage = (username) => {
-  console.log(`Congratulations, ${username}!`);
-};
-
-const showLoseMessage = (userAnswer, correctAnswer, username) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${username}!`);
-};
-
-const showQuestion = (question) => {
-  console.log(`Question: ${question}`);
-};
-
 export const game = (gameName) => {
   const currentGame = gamesMap[gameName];
   const winAnswersNumber = 3;
@@ -44,7 +26,7 @@ export const game = (gameName) => {
   console.log('Welcome to the Brain Games!');
   console.log(currentGame.rule);
 
-  const username = getUsername();
+  const username = readlineSync.question('May I have your name? ') || 'anonymous';
   console.log(`Hello, ${username}!\n`);
 
   let correctAnswerCounter = 0;
@@ -54,19 +36,20 @@ export const game = (gameName) => {
     const question = car(questionWithAnswer);
     const correctAnswer = cdr(questionWithAnswer);
 
-    showQuestion(question);
-    const userAnswer = getAnswer();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ').toString();
 
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
       correctAnswerCounter += 1;
     } else {
-      showLoseMessage(userAnswer, correctAnswer, username);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${username}!`);
       break;
     }
   }
 
   if (correctAnswerCounter === winAnswersNumber) {
-    showWinMessage(username);
+    console.log(`Congratulations, ${username}!`);
   }
 };
