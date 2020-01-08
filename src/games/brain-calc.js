@@ -3,15 +3,14 @@ import generateRandomInt from '../utils';
 
 const rule = 'What is the result of the expression ?\n';
 
-const getRightAnswer = (expr) => {
-  const [a, operator, b] = expr.split(' ');
+const getRightAnswer = (firstNumber, secondNumber, operator) => {
   switch (operator) {
     case ('+'):
-      return +a + +b;
+      return +firstNumber + +secondNumber;
     case ('-'):
-      return a - b;
+      return firstNumber - secondNumber;
     default:
-      return a * b;
+      return firstNumber * secondNumber;
   }
 };
 
@@ -26,11 +25,18 @@ const generateRandomOper = () => {
   }
 };
 
-const generateRandomExpr = () => `${generateRandomInt()} ${generateRandomOper()} ${generateRandomInt()}`;
-
 const prepareQuestion = () => {
-  const question = generateRandomExpr();
-  const rightAnswer = getRightAnswer(question);
+  const operator = generateRandomOper();
+  let firstNumber, secondNumber;
+  if (operator === '*') {
+    firstNumber = generateRandomInt(2, 11);
+    secondNumber = generateRandomInt(2, 11)
+  } else {
+    firstNumber = generateRandomInt();
+    secondNumber = generateRandomInt();
+  }
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
+  const rightAnswer = getRightAnswer(firstNumber, secondNumber, operator);
   return cons(question, rightAnswer.toString());
 };
 
