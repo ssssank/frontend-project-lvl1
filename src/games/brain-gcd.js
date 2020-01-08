@@ -3,19 +3,18 @@ import generateRandomInt from '../utils';
 
 const rule = 'Find the greatest common divisor of given numbers.\n';
 
-const getRightAnswer = (expr) => {
-  const [firstNumber, secondNumber] = expr.split(' ');
+const gcd = (firstNumber, secondNumber) => {
   if (secondNumber > 0) {
-    return getRightAnswer(`${secondNumber} ${firstNumber % secondNumber}`);
+    return gcd(secondNumber, firstNumber % secondNumber);
   }
   return +firstNumber;
 };
 
-const generateRandomGcdExpr = () => `${generateRandomInt()} ${generateRandomInt()}`;
-
 const prepareQuestion = () => {
-  const question = generateRandomGcdExpr();
-  const rightAnswer = getRightAnswer(question);
+  const firstNumber = generateRandomInt();
+  const secondNumber = generateRandomInt();
+  const question = `${firstNumber} ${secondNumber}`;
+  const rightAnswer = gcd(firstNumber, secondNumber);
   return cons(question, rightAnswer.toString());
 };
 
