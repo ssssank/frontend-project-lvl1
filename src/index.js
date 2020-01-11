@@ -10,9 +10,7 @@ export default (rule, prepareRound) => {
   const username = readlineSync.question('May I have your name? ') || 'anonymous';
   console.log(`Hello, ${username}!\n`);
 
-  let correctAnswerCounter = 0;
-
-  while (correctAnswerCounter < winAnswersNumber) {
+  for (let i = 0; i < winAnswersNumber; i += 1) {
     const questionWithAnswer = prepareRound();
     const question = car(questionWithAnswer);
     const correctAnswer = cdr(questionWithAnswer);
@@ -20,17 +18,13 @@ export default (rule, prepareRound) => {
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ').toString();
 
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-      correctAnswerCounter += 1;
-    } else {
+    if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${username}!`);
-      break;
+      return;
     }
+    console.log('Correct!');
   }
 
-  if (correctAnswerCounter === winAnswersNumber) {
-    console.log(`Congratulations, ${username}!`);
-  }
+  console.log(`Congratulations, ${username}!`);
 };
