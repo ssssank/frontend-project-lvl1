@@ -26,7 +26,7 @@ const generateRandomOper = () => {
   }
 };
 
-const prepareQuestion = () => {
+const prepareRound = () => {
   const operator = generateRandomOper();
   let firstNumber;
   let secondNumber;
@@ -42,9 +42,4 @@ const prepareQuestion = () => {
   return cons(question, rightAnswer.toString());
 };
 
-const game = {
-  rule,
-  question: prepareQuestion,
-};
-
-export default () => startGame(game);
+export default () => startGame(rule, prepareRound);

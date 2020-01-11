@@ -18,15 +18,10 @@ const isPrime = (number) => {
 
 const getRightAnswer = (question) => (isPrime(question) ? 'yes' : 'no');
 
-const prepareQuestion = () => {
+const prepareRound = () => {
   const question = generateRandomInt();
   const rightAnswer = getRightAnswer(question);
   return cons(question, rightAnswer);
 };
 
-const game = {
-  rule,
-  question: prepareQuestion,
-};
-
-export default () => startGame(game);
+export default () => startGame(rule, prepareRound);

@@ -15,7 +15,7 @@ const generateRandomProgression = (length) => {
   return progression;
 };
 
-const prepareQuestion = () => {
+const prepareRound = () => {
   const progression = generateRandomProgression(progressionLength);
   const randomIndex = generateRandomInt(0, 10);
   const rightAnswer = progression[randomIndex];
@@ -23,9 +23,4 @@ const prepareQuestion = () => {
   return cons(progression.join(' '), rightAnswer.toString());
 };
 
-const game = {
-  rule,
-  question: prepareQuestion,
-};
-
-export default () => startGame(game);
+export default () => startGame(rule, prepareRound);

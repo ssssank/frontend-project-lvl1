@@ -6,7 +6,7 @@ const rule = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (first, second) => (second > 0 ? gcd(second, first % second) : first);
 
-const prepareQuestion = () => {
+const prepareRound = () => {
   const firstNumber = generateRandomInt();
   const secondNumber = generateRandomInt();
   const question = `${firstNumber} ${secondNumber}`;
@@ -14,9 +14,4 @@ const prepareQuestion = () => {
   return cons(question, rightAnswer.toString());
 };
 
-const game = {
-  rule,
-  question: prepareQuestion,
-};
-
-export default () => startGame(game);
+export default () => startGame(rule, prepareRound);
