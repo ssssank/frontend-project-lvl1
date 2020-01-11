@@ -5,7 +5,7 @@ export default (currentGame) => {
   const winAnswersNumber = 3;
 
   console.log('Welcome to the Brain Games!');
-  console.log(currentGame.rule);
+  console.log(`${currentGame.rule}\n`);
 
   const username = readlineSync.question('May I have your name? ') || 'anonymous';
   console.log(`Hello, ${username}!\n`);

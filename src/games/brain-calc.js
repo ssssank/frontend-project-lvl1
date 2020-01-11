@@ -2,7 +2,7 @@ import { cons } from '@hexlet/pairs';
 import generateRandomInt from '../utils';
 import startGame from '..';
 
-const rule = 'What is the result of the expression ?\n';
+const rule = 'What is the result of the expression?';
 
 const getRightAnswer = (firstNumber, secondNumber, operator) => {
   switch (operator) {

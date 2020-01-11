@@ -2,7 +2,7 @@ import { cons } from '@hexlet/pairs';
 import generateRandomInt from '../utils';
 import startGame from '..';
 
-const rule = 'What number is missing in the progression?\n';
+const rule = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 const generateRandomProgression = (length) => {
