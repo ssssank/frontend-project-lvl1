@@ -16,12 +16,7 @@ const isPrime = (number) => {
   return true;
 };
 
-const getRightAnswer = (question) => {
-  if (isPrime(question)) {
-    return 'yes';
-  }
-  return 'no';
-};
+const getRightAnswer = (question) => (isPrime(question) ? 'yes' : 'no');
 
 const prepareQuestion = () => {
   const question = generateRandomInt();
