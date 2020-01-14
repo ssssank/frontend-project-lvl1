@@ -4,6 +4,7 @@ import { car, cdr } from '@hexlet/pairs';
 export default (rule, prepareRound) => {
   const winAnswersNumber = 3;
 
+export default (rule, prepareRound) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${rule}\n`);
 
