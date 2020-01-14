@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import generateRandomInt from '../utils';
+import getRandomInt from '../utils';
 import startGame from '..';
 
 const rule = 'What is the result of the expression?';
@@ -21,13 +21,13 @@ const getRightAnswer = (firstNumber, secondNumber, operator) => {
   }
 };
 
-const generateRandomOper = () => operators[generateRandomInt(0, operators.length)];
+const getRandomOper = () => operators[getRandomInt(0, operators.length - 1)];
 
 const prepareRound = () => {
-  const operator = generateRandomOper();
+  const operator = getRandomOper();
   const maxNumberForGeneration = operator === '*' ? maxNumberForMultiply : maxNumberDefault;
-  const firstNumber = generateRandomInt(0, maxNumberForGeneration);
-  const secondNumber = generateRandomInt(0, maxNumberForGeneration);
+  const firstNumber = getRandomInt(0, maxNumberForGeneration);
+  const secondNumber = getRandomInt(0, maxNumberForGeneration);
   const question = `${firstNumber} ${operator} ${secondNumber}`;
   const rightAnswer = getRightAnswer(firstNumber, secondNumber, operator);
   return cons(question, rightAnswer.toString());
