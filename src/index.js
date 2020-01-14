@@ -1,8 +1,7 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
 
-export default (rule, prepareRound) => {
-  const winAnswersNumber = 3;
+const winAnswersNumber = 3;
 
 export default (rule, prepareRound) => {
   console.log('Welcome to the Brain Games!');
@@ -17,7 +16,7 @@ export default (rule, prepareRound) => {
     const correctAnswer = cdr(questionWithAnswer);
 
     console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ').toString();
+    const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
